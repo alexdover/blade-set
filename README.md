@@ -5,7 +5,7 @@ A very simple blade extension which allows variables to be set.
 ## Example
 
 ```php
-@set($my_variable, $existing_variable)
+@set('my_variable', $existing_variable)
 ```
 
 ## Installation

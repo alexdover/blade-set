@@ -22,7 +22,7 @@ class BladeSetServiceProvider extends ServiceProvider {
 
 		$blade->extend( function($value, $compiler)
 		{
-			$value = preg_replace('/@set\((.*)\,(.*)\)/', '<?php $1 = $2; ?>', $value); 
+			$value = preg_replace("/@set\('(.*)'\,(.*)\)/", '<?php $$1 = $2; ?>', $value); 
 
 		    return $value;
 		});
