@@ -1,6 +1,8 @@
 {
     "name": "alexdover/blade-set",
-    "description": "",
+    "description": "A very simple blade extension which allows variables to be set.",
+    "keywords": ["laravel", "blade"],
+    "license": "MIT",
     "authors": [
         {
             "name": "Alex Dover",
