@@ -2,25 +2,37 @@
 
 A very simple blade extension which allows variables to be set.
 
-## Example
+### Example
 
-```php
-@set('my_variable', $existing_variable)
-```
+`@set('my_variable', $existing_variable)`
 
-## Installation
+You can then use the variable `$my_variable` in the template.
+
+You might choose to fetch a bunch of models from your template, for example
+
+`<?php $my_model_list = MyModel::where('something', '=', 1)->paginate(10); ?>`
+
+### Why?
+
+Compare
+
+`<?php $my_pages = Page::paginate(10); ?>`
+
+to
+
+`@set('my_pages', Page::paginate(10))`
+
+I felt that the use of the `@set` was a more elegant solution in the context of blade templates.
+
+### Installation
 
 Require this package in your `composer.json` and update composer. This will download the package and PHPExcel of PHPOffice.
 
-```php
-"alexdover/blade-set": "1.*"
-```
+`"alexdover/blade-set": "1.*"`
 
 After updating composer, add the ServiceProvider to the providers array in `app/config/app.php`
 
-```php
-'Alexdover\BladeSet\BladeSetServiceProvider',
-```
+`'Alexdover\BladeSet\BladeSetServiceProvider',`
 
 All done!
 
