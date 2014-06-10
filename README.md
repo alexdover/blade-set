@@ -34,7 +34,7 @@ I felt that the use of the `@set` was a more elegant solution in the context of 
 
 ### Installation
 
-Require this package in your `composer.json` and update composer. This will download the package and PHPExcel of PHPOffice.
+Require this package in your `composer.json` and update composer. This will download the package.
 
 ```php
 "alexdover/blade-set": "1.*"
