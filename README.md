@@ -13,7 +13,7 @@ You can then use the variable `$my_variable` in the template.
 You might choose to fetch a bunch of models from your template, for example
 
 ```php
-<?php $my_model_list = MyModel::where('something', '=', 1)->paginate(10); ?>
+@set('my_model_list', MyModel::where('something', '=', 1)->paginate(10))
 ```
 
 ### Why?
@@ -21,13 +21,13 @@ You might choose to fetch a bunch of models from your template, for example
 Compare
 
 ```php
-<?php $my_pages = Page::paginate(10); ?>
+<?php $my_model_list = MyModel::where('something', '=', 1)->paginate(10); ?>
 ```
 
 to
 
 ```php
-@set('my_pages', Page::paginate(10))
+@set('my_model_list', MyModel::where('something', '=', 1)->paginate(10))
 ```
 
 I felt that the use of the `@set` was a more elegant solution in the context of blade templates.
