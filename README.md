@@ -2,6 +2,10 @@
 
 A very simple blade extension which allows variables to be set.
 
+Current version is for Laravel 4.2.
+
+If you wish to use with Laravel 4.1, please use v1.0.2
+
 ### Example
 
 ```php
