@@ -22,7 +22,7 @@ class BladeSetServiceProvider extends ServiceProvider
 		$blade = $this->app['view']->getEngineResolver()->resolve('blade')->getCompiler();
 
 		$blade->extend(function($value) {
-		    return preg_replace('/@set\((?<q>\'|")(.+)\k{q}\,\s?(.+)\)/', '<?php $$2 = $3; ?>', $value);
+		    return preg_replace('/@set\((?<q>\'|")(.+)\k{q}\,\s?(.*)\)/', '<?php $$2 = $3; ?>', $value);
 		});
 	}
 
