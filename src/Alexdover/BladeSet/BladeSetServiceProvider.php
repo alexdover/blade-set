@@ -2,7 +2,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class BladeSetServiceProvider extends ServiceProvider {
+class BladeSetServiceProvider extends ServiceProvider
+{
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -20,11 +21,8 @@ class BladeSetServiceProvider extends ServiceProvider {
 	{
 		$blade = $this->app['view']->getEngineResolver()->resolve('blade')->getCompiler();
 
-		$blade->extend( function($value, $compiler)
-		{
-			$value = preg_replace("/@set\('(.*?)'\,(.*)\)/", '<?php $$1 = $2; ?>', $value); 
-
-		    return $value;
+		$blade->extend(function($value) {
+		    return preg_replace('/@set\((?<q>\'|")(.+)\k{q}\,\s?(.*)\)/', '<?php $$2 = $3; ?>', $value);
 		});
 	}
 
